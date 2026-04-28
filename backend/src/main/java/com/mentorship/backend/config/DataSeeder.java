@@ -36,6 +36,23 @@ public class DataSeeder {
             User adminObj = new User(null, "System Admin", "admin@example.com", "admin", "admin", 
                     null, null, "Platform Administrator.", 0, 0, null, null);
             userRepository.save(adminObj);
+
+            // Seed nice mentees with experience
+            User charlieObj = new User(null, "Charlie Williams", "charlie@example.com", "password123", "mentee", 
+                    null, null, "Aspiring Frontend Developer.", 2, 0, null, null);
+            charlieObj.setInterests("[\"Frontend Development\", \"UI/UX\"]");
+            
+            User danaObj = new User(null, "Dana White", "dana@example.com", "password123", "mentee", 
+                    null, null, "Data Analyst looking to transition to Data Science.", 1, 0, null, null);
+            danaObj.setInterests("[\"Data Analysis\", \"Python\"]");
+
+            User evaObj = new User(null, "Eva Green", "eva@example.com", "password123", "mentee", 
+                    null, null, "Backend enthusiast learning scalable systems.", 3, 0, null, null);
+            evaObj.setInterests("[\"Backend Development\", \"Java\", \"Spring\"]");
+
+            userRepository.save(charlieObj);
+            userRepository.save(danaObj);
+            userRepository.save(evaObj);
         };
     }
 
